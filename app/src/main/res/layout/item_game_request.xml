@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameRequestCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="6dp"
+    android:layout_marginHorizontal="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/color_white">
+
+    <LinearLayout
+        android:id="@+id/gameRequestContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/requestPlayerAvatarImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_avatar_placeholder"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/requestPlayerNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_game_request_playername"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Alex" />
+
+            <TextView
+                android:id="@+id/requestMessageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/item_game_request_wants_to_play_with_you"
+                android:textColor="@color/color_text_hint"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="wants to play with you" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/acceptRequestImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_accept_button"
+            android:padding="8dp"
+            android:src="@drawable/ic_check"
+            app:tint="@color/color_white" />
+
+        <ImageView
+            android:id="@+id/declineRequestImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_decline_button"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/color_white" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#FFFFFFFF"/>  <!-- arxa fon -->
+    <stroke android:width="2dp" android:color="#A3A3FF"/>  <!-- kənarlıq -->
+    <corners android:radius="16dp"/>  <!-- radius -->
+    <padding android:left="12dp" android:top="12dp"
+        android:right="12dp" android:bottom="12dp"/>
+    <gradient
+        android:startColor="#9C27B0"
+        android:endColor="#6A1B9A"
+        android:angle="45" />
+</shape>

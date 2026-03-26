@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_create_test_color"
+    tools:context=".ui.CreateTestFragment">
+
+    <ScrollView
+        android:id="@+id/createQuizScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="40dp"
+        android:paddingTop="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:shadowColor="#4545BEB9"
+                android:shadowDx="0"
+                android:shadowDy="3"
+                android:shadowRadius="10"
+                android:text="@string/create_test_create_quiz"
+                android:textAlignment="center"
+                android:textColor="@color/color_blue"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:alpha="0.9"
+                android:text="@string/create_test_build_a_clean_and_custom_quiz_setup"
+                android:textColor="@color/color_text_hint"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/categoryLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/create_test_category"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/categorySelectorContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_white"
+                    android:elevation="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
+
+                    <ImageView
+                        android:id="@+id/categorySelectedIconImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_category_informatics"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/categoryTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:hint="@string/create_test_select_category"
+                        android:maxLines="1"
+                        android:textColor="@color/color_navy_blue"
+                        android:textColorHint="@color/color_text_hint"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                    <ImageView
+                        android:id="@+id/categoryArrowImageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_arrow"
+                        android:clickable="true"
+                        android:contentDescription="@string/create_test_expand_category"
+                        android:focusable="true"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/informaticsOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/informaticsImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_category_informatics" />
+
+                    <TextView
+                        android:id="@+id/informaticsTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_informatics"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mathematicsOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/mathematicsImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_catagory_math_pi" />
+
+                    <TextView
+                        android:id="@+id/mathematicsTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_mathematics"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/englishOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/englishImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_category_english" />
+
+                    <TextView
+                        android:id="@+id/englishTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_english"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historyOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/historyImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_category_history" />
+
+                    <TextView
+                        android:id="@+id/historyTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_history"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/worldKnowledgeOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/worldKnowledgeImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_category_knowledge" />
+
+                    <TextView
+                        android:id="@+id/worldKnowledgeTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_world_knowledge"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/logicOptionContainer"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/logicImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_category_logic" />
+
+                    <TextView
+                        android:id="@+id/logicTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_logic"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/difficultyLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/create_test_difficulty"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/difficultySelectorContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_white"
+                    android:elevation="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/difficultyTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:hint="@string/create_test_select_difficulty"
+                        android:maxLines="1"
+                        android:textColor="@color/color_navy_blue"
+                        android:textColorHint="@color/color_text_hint"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                    <ImageView
+                        android:id="@+id/difficultyArrowImageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_arrow"
+                        android:clickable="true"
+                        android:contentDescription="@string/create_test_expand_difficulty"
+                        android:focusable="true"
+                        android:src="@drawable/ic_arrow_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/easyOptionContainer"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/easyTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_easy"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mediumOptionContainer"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/mediumTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_medium"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hardOptionContainer"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/hardTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/create_test_hard"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/topicLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/create_test_topic"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/topicSelectorContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_white"
+                    android:elevation="5dp">
+
+                    <Spinner
+                        android:id="@+id/topicSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="45dp"
+                        android:alpha="0"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:spinnerMode="dropdown"
+                        android:visibility="invisible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp">
+
+                        <TextView
+                            android:id="@+id/topicTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:hint="@string/create_test_hint_topic"
+                            android:maxLines="1"
+                            android:textColor="@color/color_navy_blue"
+                            android:textColorHint="@color/color_text_hint"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/topicArrowImageView"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/ic_arrow"
+                            android:clickable="true"
+                            android:contentDescription="@string/create_test_expand_topic"
+                            android:focusable="true"
+                            android:src="@drawable/ic_arrow_down" />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/questionCountLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/create_test_question_count"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/questionCountSelectorContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_white"
+                    android:elevation="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/questionCountTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:hint="@string/create_test_select_question_count"
+                        android:maxLines="1"
+                        android:textColor="@color/color_navy_blue"
+                        android:textColorHint="@color/color_text_hint"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                    <ImageView
+                        android:id="@+id/questionCountArrowImageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_arrow"
+                        android:clickable="true"
+                        android:contentDescription="@string/create_test_expand_question_count"
+                        android:focusable="true"
+                        android:src="@drawable/ic_arrow_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tenQuestionsOptionContainer"
+                    android:layout_width="96dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tenQuestionsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_test__10"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/twentyQuestionsOptionContainer"
+                    android:layout_width="96dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/twentyQuestionsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_test__20"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/thirtyQuestionsOptionContainer"
+                    android:layout_width="96dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_ct"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/thirtyQuestionsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_test__30"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/quizTitleLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/create_test_title"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/quizTitleInputContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_white"
+                    android:elevation="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
+
+                    <EditText
+                        android:id="@+id/quizTitleEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/create_test_quiz_title"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:textColor="@color/color_navy_blue"
+                        android:textColorHint="@color/color_text_hint"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/saveQuizButtonCard"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="26dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="@color/color_navy_blue"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:id="@+id/saveQuizButtonText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_material_button"
+                    android:gravity="center"
+                    android:text="@string/create_test_save_quiz"
+                    android:textColor="@color/color_navy_blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

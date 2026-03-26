@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/otherPlayerProfileRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ui.OtherPlayerProfileFragment">
+
+    <ScrollView
+        android:id="@+id/otherPlayerProfileScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/otherPlayerProfileContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Top Bar -->
+            <LinearLayout
+                android:id="@+id/otherPlayerTopBarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/backImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_arrow_back"
+                    app:tint="@color/color_navy_blue" />
+
+                <TextView
+                    android:id="@+id/otherPlayerProfileTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/other_player_profile_player_profile"
+                    android:textColor="@color/color_navy_blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/moreOptionsImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_menu_vertical"
+                    app:tint="@color/color_navy_blue" />
+            </LinearLayout>
+
+            <!-- Profile Main Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/otherPlayerMainCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:cardBackgroundColor="@color/color_white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/color_surface"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/otherPlayerMainCardContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/otherPlayerAvatarImageView"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_avatar_placeholder"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+                    <TextView
+                        android:id="@+id/otherPlayerNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/other_player_profile_player_name"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="AElion" />
+
+                    <TextView
+                        android:id="@+id/otherPlayerIdTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/other_player_profile_id_ael_2048"
+                        android:textColor="@color/color_text_hint"
+                        android:textSize="14sp"
+                        tools:text="ID: AEL-2048" />
+
+                    <LinearLayout
+                        android:id="@+id/otherPlayerScoreContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_orange"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="14dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="8dp">
+
+                        <ImageView
+                        android:id="@+id/otherPlayerScoreIconImageView"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_score" />
+
+                        <TextView
+                            android:id="@+id/otherPlayerScoreTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/other_player_profile__2450_xp"
+                            android:textColor="@color/color_white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="2450" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/otherPlayerStatusTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/other_player_profile_online"
+                        android:textColor="@color/color_green"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="Online" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Stats Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/otherPlayerStatsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/color_white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/color_surface"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/otherPlayerStatsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/playerStatsTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/other_player_profile_player_stats"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/totalGamesRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/totalGamesLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/other_player_profile_total_games"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/totalGamesValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/other_player_profile__128"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="128" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/totalGamesDividerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="@color/color_surface" />
+
+                    <LinearLayout
+                        android:id="@+id/correctAnswersRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/correctAnswersLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/other_player_profile_correct_answers"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/correctAnswersValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/other_player_profile__934"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="934" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/correctAnswersDividerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="@color/color_surface" />
+
+                    <LinearLayout
+                        android:id="@+id/winRateRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/winRateLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/other_player_profile_win_rate"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/winRateValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/other_player_profile__76"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="76%" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:id="@+id/otherPlayerActionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/addFriendButtonCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/color_orange_primary"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/addFriendButtonContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:minHeight="54dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="14dp">
+
+                        <ImageView
+                            android:id="@+id/addFriendIconImageView"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_person_add"
+                            app:tint="@color/color_white" />
+
+                        <TextView
+                            android:id="@+id/addFriendTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/other_player_profile_add_friend"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/challengePlayerButtonCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/color_navy_blue"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/challengePlayerButtonContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:minHeight="54dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="14dp">
+
+                        <ImageView
+                            android:id="@+id/challengePlayerIconImageView"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_swords"
+                            app:tint="@color/color_white" />
+
+                        <TextView
+                            android:id="@+id/challengePlayerTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/other_player_profile_challenge_player"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

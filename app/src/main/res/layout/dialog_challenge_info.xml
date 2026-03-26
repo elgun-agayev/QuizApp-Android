@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:layout_marginTop="36dp">
+
+        <TextView
+            android:id="@+id/infoTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_challenge_info_challenge_ended"
+            android:textColor="@color/color_navy_blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/infoIconImageView"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/ic_info"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/infoMessageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dialog_challenge_info_opponent_cancelled_the_challenge"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/closeInfoButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/color_orange_primary"
+            android:text="@string/dialog_challenge_info_ok"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

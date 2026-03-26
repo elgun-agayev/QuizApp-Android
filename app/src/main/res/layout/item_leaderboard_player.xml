@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/leaderboardPlayerItemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_white"
+    android:elevation="3dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="12dp">
+
+    <TextView
+        android:id="@+id/playerRankTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/item_leaderboard_player__1"
+        android:textColor="@color/color_navy_blue"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="30dp"
+        android:layout_height="30dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/playerAvatarImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar_4"
+            app:shapeAppearanceOverlay="@style/CircleImage"
+            app:strokeColor="#AE844F"
+            app:strokeWidth="2dp" />
+
+        <View
+            android:id="@+id/playerStatusIndicator"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/status_online" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/playerInfoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/playerNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/item_leaderboard_player_player_name"
+            android:textColor="@color/color_navy_blue"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/playerScoreContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/playerScoreIconImageView"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/item_leaderboard_player_score_icon"
+                android:src="@drawable/ic_score" />
+
+            <TextView
+                android:id="@+id/playerScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/item_leaderboard_player__00000000"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/playerMoreOptionsImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/item_leaderboard_player_more_options"
+        android:focusable="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu_vertical" />
+
+</LinearLayout>

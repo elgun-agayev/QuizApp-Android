@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.quizapp.ui.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.quizapp.ui.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quizapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_createTestFragment"
+            app:destination="@id/createTestFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_singlePlayerSetupFragment"
+            app:destination="@id/singlePlayerSetupFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_multiPlayerModeFragment"
+            app:destination="@id/multiPlayerModeFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_leaderFragment"
+            app:destination="@id/leaderFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_challengeRoomFragment"
+            app:destination="@id/challengeRoomFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leaderFragment"
+        android:name="com.example.quizapp.ui.LeaderFragment"
+        android:label="fragment_leader"
+        tools:layout="@layout/fragment_leaderboard">
+
+        <action
+            android:id="@+id/action_leaderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createTestFragment"
+        android:name="com.example.quizapp.ui.CreateTestFragment"
+        android:label="fragment_create_test"
+        tools:layout="@layout/fragment_create_test">
+
+        <action
+            android:id="@+id/action_createTestFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/singlePlayerSetupFragment"
+        android:name="com.example.quizapp.ui.SinglePlayerSetupFragment"
+        android:label="SinglePlayerSetupFragment"
+        tools:layout="@layout/fragment_single_player_setup">
+
+        <action
+            android:id="@+id/action_singlePlayerSetupFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+
+        <action
+            android:id="@+id/action_singlePlayerSetupFragment_to_singlePlayerMatchmakingFragment"
+            app:destination="@id/singlePlayerMatchmakingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/multiPlayerModeFragment"
+        android:name="com.example.quizapp.ui.MultiPlayerModeFragment"
+        android:label="MultiPlayerModeFragment"
+        tools:layout="@layout/fragment_multiplayer_mode">
+
+        <action
+            android:id="@+id/action_multiPlayerModeFragment_to_multiPlayer_RandomFragment"
+            app:destination="@id/multiPlayer_RandomFragment" />
+
+        <action
+            android:id="@+id/action_multiPlayerModeFragment_to_multiPlayerFriendFragment"
+            app:destination="@id/multiPlayerFriendFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/multiPlayer_RandomFragment"
+        android:name="com.example.quizapp.ui.MultiPlayerRandomFragment"
+        android:label="MultiPlayer_RandomFragment"
+        tools:layout="@layout/fragment_multiplayer_random">
+
+        <action
+            android:id="@+id/action_multiPlayer_RandomFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/multiPlayerFriendFragment"
+        android:name="com.example.quizapp.ui.MultiPlayerFriendFragment"
+        android:label="MultiPlayerFriendFragment"
+        tools:layout="@layout/fragment_multiplayer_friend">
+
+        <action
+            android:id="@+id/action_multiPlayerFriendFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.quizapp.ui.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_themeFragment"
+            app:destination="@id/themeFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_challengeRoomFragment"
+            app:destination="@id/challengeRoomFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.quizapp.ui.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/themeFragment"
+        android:name="com.example.quizapp.ui.ThemeFragment"
+        android:label="fragment_theme"
+        tools:layout="@layout/fragment_theme">
+
+        <action
+            android:id="@+id/action_themeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizGameFragment"
+        android:name="com.example.quizapp.ui.QuizGameFragment"
+        android:label="fragment_quiz_game"
+        tools:layout="@layout/fragment_quiz_game">
+
+        <action
+            android:id="@+id/action_quizGameFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+        <action
+            android:id="@+id/action_quizGameFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/quizGameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ui.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+
+        <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_resultFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+
+        <action
+            android:id="@+id/action_resultFragment_to_leaderFragment"
+            app:destination="@id/leaderFragment" />
+
+        <action
+            android:id="@+id/action_resultFragment_to_reviewAnswersFragment"
+            app:destination="@id/reviewAnswersFragment" />
+
+        <action
+            android:id="@+id/action_resultFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.quizapp.ui.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites">
+
+        <action
+            android:id="@+id/action_favoritesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewAnswersFragment"
+        android:name="com.example.quizapp.ui.ReviewAnswersFragment"
+        android:label="ReviewAnswersFragment"
+        tools:layout="@layout/fragment_review_answers">
+
+        <action
+            android:id="@+id/action_reviewAnswersFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/singlePlayerMatchmakingFragment"
+        android:name="com.example.quizapp.ui.SinglePlayerMatchmakingFragment"
+        android:label="fragment_single_player_matchmaking"
+        tools:layout="@layout/fragment_single_player_matchmaking">
+
+        <action
+            android:id="@+id/action_singlePlayerMatchmakingFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otherPlayerProfileFragment"
+        android:name="com.example.quizapp.ui.OtherPlayerProfileFragment"
+        android:label="OtherPlayerProfileFragment"
+        tools:layout="@layout/fragment_other_player_profile" />
+
+    <fragment
+        android:id="@+id/challengeRoomFragment"
+        android:name="com.example.quizapp.ui.ChallengeRoomFragment"
+        android:label="fragment_challenge_room"
+        tools:layout="@layout/fragment_challenge_room">
+
+        <action
+            android:id="@+id/action_challengeRoomFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+
+        <action
+            android:id="@+id/action_challengeRoomFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>

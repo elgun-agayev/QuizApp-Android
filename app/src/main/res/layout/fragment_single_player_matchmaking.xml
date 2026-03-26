@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/singlePlayerMatchmakingRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_random_multiplayer_background"
+    tools:context=".ui.SinglePlayerMatchmakingFragment">
+
+    <ScrollView
+        android:id="@+id/matchmakingScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/matchmakingMainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/matchmakingTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/single_player_matchmaking_finding_opponent"
+                android:textColor="@color/color_orange_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/matchmakingSubtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/single_player_matchmaking_we_are_searching_for_an_online_opponent_for_you"
+                android:textAlignment="center"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="15sp" />
+
+            <FrameLayout
+                android:id="@+id/timerContainer"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="28dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/matchmakingTimerProgressIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="45"
+                    android:progress="45"
+                    app:indicatorColor="@color/color_green"
+                    app:indicatorSize="110dp"
+                    app:indicatorInset="0dp"
+                    app:trackColor="#DDE5F2"
+                    app:trackThickness="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/timerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/single_player_matchmaking__45"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/searchingStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/single_player_matchmaking_searching_for_opponent"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/versusContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/youCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/youCardContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/youAvatarImageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_avatar_placeholder"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="@color/color_orange_primary"
+                            app:strokeWidth="2dp" />
+
+                        <TextView
+                            android:id="@+id/youLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/single_player_matchmaking_you"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/youNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/single_player_matchmaking_player"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/vsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/single_player_matchmaking_vs"
+                    android:textColor="@color/color_orange_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/opponentCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/opponentCardContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/opponentAvatarImageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_avatar_placeholder"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="@color/color_purple"
+                            app:strokeWidth="2dp" />
+
+                        <TextView
+                            android:id="@+id/opponentLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/single_player_matchmaking_opponent"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/opponentStatusTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:text="@string/single_player_matchmaking_searching"
+                            android:textAlignment="center"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/matchInfoCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:id="@+id/matchInfoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/matchInfoTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/single_player_matchmaking_match_details"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/categoryRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/categoryLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/single_player_matchmaking_category"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/categoryValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/single_player_matchmaking_mathematics"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Mathematics" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/categoryDividerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#E6E6E6" />
+
+                    <LinearLayout
+                        android:id="@+id/difficultyRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/difficultyLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/single_player_matchmaking_difficulty"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/difficultyValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/single_player_matchmaking_medium"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Medium" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/difficultyDividerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#E6E6E6" />
+
+                    <LinearLayout
+                        android:id="@+id/questionCountRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/questionCountLabelTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/single_player_matchmaking_question_count"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/questionCountValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/single_player_matchmaking__10"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="10" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/noOpponentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/noOpponentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/single_player_matchmaking_no_opponent_found"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_navy_blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/noOpponentSubTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/single_player_matchmaking_would_you_like_to_continue_with_a_computer_opponent"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/playVsComputerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="18dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/color_orange_primary"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+
+                    <TextView
+                        android:id="@+id/playVsComputerTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/single_player_matchmaking_play_vs_computer"
+                        android:textColor="@color/color_white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/continueSearchingButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/color_purple"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+
+                    <TextView
+                        android:id="@+id/continueSearchingTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/single_player_matchmaking_continue_searching"
+                        android:textColor="@color/color_white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cancelSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/color_red"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <TextView
+                    android:id="@+id/cancelSearchTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/single_player_matchmaking_cancel_search"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

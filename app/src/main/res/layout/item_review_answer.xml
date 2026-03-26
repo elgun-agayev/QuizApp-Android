@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/color_lavender"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:id="@+id/reviewAnswerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Question -->
+        <TextView
+            android:id="@+id/reviewQuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/item_review_answer_question_text"
+            android:textColor="@color/color_navy_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="2dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- Your Answer -->
+        <TextView
+            android:id="@+id/reviewUserAnswerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/item_review_answer_your_answer"
+            android:textColor="@color/color_error"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"/>
+
+        <!-- Correct Answer -->
+        <TextView
+            android:id="@+id/reviewCorrectAnswerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/item_review_answer_correct_answer"
+            android:textColor="@color/color_success"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"/>
+
+        <!-- Favorite Button -->
+        <ImageView
+            android:id="@+id/reviewFavoriteImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_bookmark"
+            android:contentDescription="@null"
+            app:tint="@color/color_orange_primary"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

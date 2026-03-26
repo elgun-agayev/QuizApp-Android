@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_copy_player_id"
+        android:title="Copy Player ID" />
+
+    <item
+        android:id="@+id/menu_share_profile"
+        android:title="Share Profile" />
+
+</menu>

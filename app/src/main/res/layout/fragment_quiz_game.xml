@@ -1,0 +1,1415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quizGameRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ui.QuizGameFragment">
+
+    <ImageView
+        android:id="@+id/quizBackgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_informatics_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/backgroundOverlayView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.35"
+        android:background="@color/color_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/quizGameScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/quizGameMainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/teamHeaderCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/teamHeaderContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/teamModeLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quiz_game_team_battle"
+                        android:textColor="@color/color_orange_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/teamBattleRowContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/teamAQuizCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_orange_primary"
+                            app:strokeWidth="1.5dp">
+
+                            <LinearLayout
+                                android:id="@+id/teamAQuizContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/teamAHeaderRow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/teamAQuizTitleTextView"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/quiz_game_team_a"
+                                        android:textColor="@color/color_orange_primary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/teamAQuizCountTextView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--/--"
+                                        android:textColor="@color/color_text_hint"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"
+                                        tools:text="2/2" />
+
+                                    <ImageView
+                                        android:id="@+id/teamAExpandImageView"
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:layout_marginStart="6dp"
+                                        android:src="@drawable/ic_arrow_down"
+                                        app:tint="@color/color_orange_primary" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/teamAStatusTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/quiz_game_leading_team"
+                                    android:textColor="@color/color_orange_primary"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold"
+                                    tools:text="Leading team" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/teamATopPlayerCardView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:cardBackgroundColor="@color/color_surface"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/color_lavender"
+                                    app:strokeWidth="1dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/teamATopPlayerAvatarImageView"
+                                            android:layout_width="36dp"
+                                            android:layout_height="36dp"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/ic_avatar_placeholder"
+                                            app:shapeAppearanceOverlay="@style/CircleImage"
+                                            app:strokeColor="@color/color_orange_primary"
+                                            app:strokeWidth="1.5dp" />
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/teamATopPlayerNameTextView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/quiz_game_you"
+                                                android:textColor="@color/color_navy_blue"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold"
+                                                tools:text="Elgun" />
+
+                                            <TextView
+                                                android:id="@+id/teamATopPlayerStatsTextView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="2dp"
+                                                android:text="@string/quiz_game_correct_4_wrong_1"
+                                                android:textColor="@color/color_text_hint"
+                                                android:textSize="10sp"
+                                                tools:text="Correct 4 • Wrong 1" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/teamATopPlayerCorrectCountTextView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/quiz_game__4"
+                                            android:textColor="@color/color_orange_primary"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="4" />
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/teamAQuizScoreTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_score_2"
+                                    android:textColor="@color/color_orange_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    tools:text="Score: 2" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/teamQuizVsContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/teamQuizVsCardView"
+                                android:layout_width="54dp"
+                                android:layout_height="54dp"
+                                app:cardBackgroundColor="@color/color_purple"
+                                app:cardCornerRadius="27dp"
+                                app:cardElevation="2dp">
+
+                                <TextView
+                                    android:id="@+id/teamQuizVsTextView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/quiz_game_vs"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                android:id="@+id/teamGlobalTimerContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_navy"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp">
+
+                                <ImageView
+                                    android:id="@+id/teamTimerIconImageView"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_timer"
+                                    app:tint="@color/color_white" />
+
+                                <TextView
+                                    android:id="@+id/teamTimerTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:text="@string/quiz_game__58s"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    tools:text="58s" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/teamBQuizCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_purple"
+                            app:strokeWidth="1.5dp">
+
+                            <LinearLayout
+                                android:id="@+id/teamBQuizContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/teamBHeaderRow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/teamBQuizTitleTextView"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/quiz_game_team_b"
+                                        android:textColor="@color/color_purple"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/teamBQuizCountTextView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--/--"
+                                        android:textColor="@color/color_text_hint"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"
+                                        tools:text="2/2" />
+
+                                    <ImageView
+                                        android:id="@+id/teamBExpandImageView"
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:layout_marginStart="6dp"
+                                        android:src="@drawable/ic_arrow_down"
+                                        app:tint="@color/color_purple" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/teamBStatusTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/quiz_game_behind_by_1"
+                                    android:textColor="@color/color_purple"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold"
+                                    tools:text="Behind by 1" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/teamBTopPlayerCardView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:cardBackgroundColor="@color/color_surface"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/color_lavender"
+                                    app:strokeWidth="1dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/teamBTopPlayerAvatarImageView"
+                                            android:layout_width="36dp"
+                                            android:layout_height="36dp"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/ic_avatar_placeholder"
+                                            app:shapeAppearanceOverlay="@style/CircleImage"
+                                            app:strokeColor="@color/color_purple"
+                                            app:strokeWidth="1.5dp" />
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/teamBTopPlayerNameTextView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/quiz_game_jessica"
+                                                android:textColor="@color/color_navy_blue"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold"
+                                                tools:text="Jessica" />
+
+                                            <TextView
+                                                android:id="@+id/teamBTopPlayerStatsTextView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="2dp"
+                                                android:text="@string/quiz_game_correct_3_wrong_2"
+                                                android:textColor="@color/color_text_hint"
+                                                android:textSize="10sp"
+                                                tools:text="Correct 3 • Wrong 2" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/teamBTopPlayerCorrectCountTextView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/quiz_game__3"
+                                            android:textColor="@color/color_purple"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:text="3" />
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/teamBQuizScoreTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_score_1"
+                                    android:textColor="@color/color_purple"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    tools:text="Score: 1" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/duelHeaderCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/duelHeaderContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/duelModeLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quiz_game_online_duel"
+                        android:textColor="@color/color_orange_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/duelBattleRowContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/playerQuizCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_orange_primary"
+                            app:strokeWidth="1.5dp">
+
+                            <LinearLayout
+                                android:id="@+id/playerQuizContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/playerAvatarImageView"
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/avatar_1"
+                                    app:shapeAppearanceOverlay="@style/CircleImage"
+                                    app:strokeColor="@color/color_orange_primary"
+                                    app:strokeWidth="2dp" />
+
+                                <TextView
+                                    android:id="@+id/playerNameTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_you"
+                                    android:textColor="@color/color_navy_blue"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/playerSubLabelTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/quiz_game_player"
+                                    android:textColor="@color/color_text_hint"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/playerScoreMiniTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_score_0"
+                                    android:textColor="@color/color_orange_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/duelVsContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/duelVsCardView"
+                                android:layout_width="54dp"
+                                android:layout_height="54dp"
+                                app:cardBackgroundColor="@color/color_purple"
+                                app:cardCornerRadius="27dp"
+                                app:cardElevation="2dp">
+
+                                <TextView
+                                    android:id="@+id/duelVsTextView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/quiz_game_vs"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                android:id="@+id/duelTimerContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_navy"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp">
+
+                                <ImageView
+                                    android:id="@+id/duelTimerIconImageView"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_timer"
+                                    app:tint="@color/color_white" />
+
+                                <TextView
+                                    android:id="@+id/duelTimerTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:text="@string/quiz_game__60s"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    tools:text="60s" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/opponentQuizCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_purple"
+                            app:strokeWidth="1.5dp">
+
+                            <LinearLayout
+                                android:id="@+id/opponentQuizContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/opponentAvatarImageView"
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/avatar_2"
+                                    app:shapeAppearanceOverlay="@style/CircleImage"
+                                    app:strokeColor="@color/color_purple"
+                                    app:strokeWidth="2dp" />
+
+                                <TextView
+                                    android:id="@+id/opponentNameTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_opponent"
+                                    android:textColor="@color/color_navy_blue"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/opponentSubLabelTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/quiz_game_online"
+                                    android:textColor="@color/color_text_hint"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/opponentScoreMiniTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/quiz_game_score_0"
+                                    android:textColor="@color/color_purple"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectedTeamDetailsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/selectedTeamDetailsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/selectedTeamHeaderRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/selectedTeamTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/quiz_game_team_a"
+                            android:textColor="@color/color_orange_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="Team A" />
+
+                        <ImageView
+                            android:id="@+id/selectedTeamCloseImageView"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_close"
+                            app:tint="@color/color_text_hint" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/selectedTeamStatusTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/quiz_game_leading_by_1"
+                        android:textColor="@color/color_orange_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="Leading by 1" />
+
+                    <LinearLayout
+                        android:id="@+id/selectedTeamStatsRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/selectedTeamCorrectCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_lavender"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/quiz_game_correct"
+                                    android:textColor="@color/color_text_hint"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/selectedTeamCorrectTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="@string/quiz_game__8"
+                                    android:textColor="@color/color_success"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    tools:text="8" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/selectedTeamWrongCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/color_white"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_lavender"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/quiz_game_wrong"
+                                    android:textColor="@color/color_text_hint"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/selectedTeamWrongTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="@string/quiz_game__3"
+                                    android:textColor="@color/color_error"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    tools:text="3" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/topPerformerLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/quiz_game_top_performer"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/selectedTeamTopPerformerCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="@color/color_white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/color_lavender"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/selectedTeamTopPerformerAvatarImageView"
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_avatar_placeholder"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_orange_primary"
+                                app:strokeWidth="2dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/selectedTeamTopPerformerNameTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/quiz_game_elgun"
+                                    android:textColor="@color/color_navy_blue"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    tools:text="Elgun" />
+
+                                <TextView
+                                    android:id="@+id/selectedTeamTopPerformerStatsTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/quiz_game_correct_4_wrong_1"
+                                    android:textColor="@color/color_text_hint"
+                                    android:textSize="11sp"
+                                    tools:text="Correct 4 • Wrong 1" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/selectedTeamTopPerformerBadgeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_orange"
+                                android:paddingStart="10dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="4dp"
+                                android:text="@string/quiz_game_mvp"
+                                android:textColor="@color/color_white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/selectedTeamPlayersLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/quiz_game_players"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/selectedTeamPlayersRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:nestedScrollingEnabled="false"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_team_player" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/quizTopBarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backImageView"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_white"
+                    android:contentDescription="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <LinearLayout
+                    android:id="@+id/quizHeaderTextContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/quizCategoryTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingEnd="8dp"
+                        android:text="@string/quiz_game_informatics"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:drawableStart="@drawable/ic_chip_knowledge"
+                        tools:text="World Knowledge" />
+
+                    <TextView
+                        android:id="@+id/questionCountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/quiz_game_question_1_10"
+                        android:textColor="@color/color_text_hint"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/bookmarkQuestionImageView"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_bookmark"
+                    app:tint="@color/color_orange_primary" />
+
+                <LinearLayout
+                    android:id="@+id/timerContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_navy"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:id="@+id/timerIconImageView"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_timer"
+                        app:tint="@color/color_white" />
+
+                    <TextView
+                        android:id="@+id/timerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/quiz_game__20s"
+                        android:textColor="@color/color_white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/progressCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/progressCardContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/progressLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quiz_game_quiz_progress"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/questionProgressIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:max="10"
+                        android:progress="1"
+                        app:indicatorColor="@color/color_orange_primary"
+                        app:trackColor="@color/color_lavender" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/questionCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/questionCardContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/questionLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quiz_game_question"
+                        android:textColor="@color/color_orange_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/questionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/quiz_game_what_does_cpu_stand_for_in_computer_science"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/questionImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="16dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/bg_white"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar_4"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/optionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/optionACardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/optionAContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="68dp"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/optionALabelTextView"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_blue"
+                            android:gravity="center"
+                            android:text="@string/quiz_game_a"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/optionATextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:text="@string/quiz_game_central_processing_unit"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/optionBCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/optionBContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="68dp"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/optionBLabelTextView"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_purple"
+                            android:gravity="center"
+                            android:text="@string/quiz_game_b"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/optionBTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:text="@string/quiz_game_computer_power_unit"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/optionCCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/optionCContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="68dp"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/optionCLabelTextView"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_orange"
+                            android:gravity="center"
+                            android:text="@string/quiz_game_c"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/optionCTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:text="@string/quiz_game_control_program_utility"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/optionDCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/optionDContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="68dp"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/optionDLabelTextView"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_navy"
+                            android:gravity="center"
+                            android:text="@string/quiz_game_d"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/optionDTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:text="@string/quiz_game_central_program_utility"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/helpersTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/quiz_game_helpers"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/helpersContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/help5050CardView"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/help5050Container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/help5050IconImageView"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_filter"
+                            app:tint="@color/color_orange_primary" />
+
+                        <TextView
+                            android:id="@+id/help5050TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/quiz_game__50_50"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/helpSkipCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/helpSkipContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/helpSkipIconImageView"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_skip_next"
+                            app:tint="@color/color_blue" />
+
+                        <TextView
+                            android:id="@+id/helpSkipTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/quiz_game_skip"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/helpExtraTimeCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/helpExtraTimeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/helpExtraTimeIconImageView"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_timer"
+                            app:tint="@color/color_green" />
+
+                        <TextView
+                            android:id="@+id/helpExtraTimeTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/quiz_game__10_sec"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

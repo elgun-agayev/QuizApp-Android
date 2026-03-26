@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_black">#FF000000</color>
+    <color name="color_white">#FFFFFFFF</color>
+    <color name="color_orange_primary">#f78441</color>
+    <color name="color_navy_blue">#352e4f</color>
+    <color name="color_purple">#8c72ed</color>
+    <color name="color_blue">#45beb9</color>
+    <color name="color_red">#f55150</color>
+    <color name="color_green">#34d287</color>
+    <color name="color_background">#e9e7f2</color>
+    <color name="color_surface">#FFFFFFFF</color>
+    <color name="color_text_primary">#353ef4</color>
+    <color name="color_text_hint">#8a8b9b</color>
+    <color name="color_error">#f55150</color>
+    <color name="color_success">#34d287</color>
+    <color name="color_lavender">#A3A3FF</color>
+    <color name="color_icon_tint">#4D4D4D</color>
+    <color name="color_aqua_blue">#0B8EB9</color>
+    <color name="color_aqua_orange">#DE8F71</color>
+    <color name="color_random_multiplayer_background">#FFC107</color>
+</resources>

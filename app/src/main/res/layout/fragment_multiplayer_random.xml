@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/randomMultiplayerRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_multiplayer_mode"
+    tools:context=".ui.MultiPlayerRandomFragment">
+
+    <ScrollView
+        android:id="@+id/randomMultiplayerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/randomMultiplayerMainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/randomMultiplayerTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/multiplayer_random_finding_players"
+                android:textColor="@color/color_purple"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/randomMultiplayerSubtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/multiplayer_random_building_teams_for_your_multiplayer_match"
+                android:textAlignment="center"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:id="@+id/randomTimerContainer"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="22dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/randomMatchmakingTimerProgressIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="45"
+                    android:progress="45"
+                    app:indicatorColor="@color/color_green"
+                    app:indicatorInset="0dp"
+                    app:indicatorSize="110dp"
+                    app:trackColor="#E6E6F2"
+                    app:trackThickness="8dp" />
+
+                <TextView
+                    android:id="@+id/randomTimerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/multiplayer_random__45"
+                    android:textColor="@color/color_navy_blue"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/searchingForPlayerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/multiplayer_random_searching_for_players"
+                android:textColor="@color/color_purple"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/randomMatchInfoContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/randomCategoryChipCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:strokeColor="@color/color_purple"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:id="@+id/randomCategoryChipTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:drawableStart="@drawable/ic_chip_english"
+                        android:drawablePadding="6dp"
+                        android:text="@string/multiplayer_random_english"
+                        android:textColor="@color/color_navy_blue" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/randomFormatChipCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="18dp"
+                    app:strokeColor="@color/color_purple"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:id="@+id/randomFormatChipTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/multiplayer_random__2v2"
+                        android:textColor="@color/color_navy_blue" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/teamsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/teamACardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/color_orange_primary"
+                    app:strokeWidth="2dp">
+
+                    <LinearLayout
+                        android:id="@+id/teamAContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/teamATitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/multiplayer_random_team_a"
+                            android:textColor="@color/color_orange_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/teamAPlayerCountTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/multiplayer_random__0_4"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/teamARecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            tools:listitem="@layout/item_team_player" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/teamsVsBadgeCardView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardBackgroundColor="@color/color_purple"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="4dp">
+
+                    <TextView
+                        android:id="@+id/teamsVsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/multiplayer_random_vs"
+                        android:textColor="@color/color_white"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/teamBCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/color_purple"
+                    app:strokeWidth="2dp">
+
+                    <LinearLayout
+                        android:id="@+id/teamBContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/teamBTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/multiplayer_random_team_b"
+                            android:textColor="@color/color_purple"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/teamBPlayerCountTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/multiplayer_random__0_4"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/teamBRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            tools:listitem="@layout/item_team_player" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/stopSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="@color/color_purple"
+                android:text="@string/multiplayer_random_stop_searching"
+                android:textColor="@color/color_white"
+                android:textSize="16sp"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

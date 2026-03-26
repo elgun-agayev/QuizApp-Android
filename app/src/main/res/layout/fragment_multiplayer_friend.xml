@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/friendsMultiplayerRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ui.MultiPlayerFriendFragment">
+
+    <ImageView
+        android:id="@+id/friendsBackgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_informatics_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/friendsBackgroundOverlayView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.42"
+        android:background="@color/color_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/friendsMultiplayerNestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="24dp"
+        android:paddingTop="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/friendsMultiplayerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:paddingBottom="220dp">
+
+            <TextView
+                android:id="@+id/friendsTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/multiplayer_friend_play_with_friends"
+                android:textColor="@color/color_orange_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/friendsSubtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/multiplayer_friend_teams_are_ready"
+                android:textAlignment="center"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/friendsTeamInstructionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/multiplayer_friend_double_tap_a_slot_to_join_a_team"
+                android:textColor="@color/color_text_hint"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/friendsChipsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/friendsCategoryChipCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:id="@+id/friendsCategoryChipTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:minHeight="36dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/multiplayer_friend_mathematics"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:drawableStart="@drawable/ic_chip_math_pi"
+                        tools:text="Mathematics" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/friendsFormatChipCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/color_lavender"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:id="@+id/friendsFormatChipTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="36dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/multiplayer_friend__4v4"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/roomIdCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/roomIdContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/roomIdLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/multiplayer_friend_room_id"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/roomIdTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/multiplayer_friend_ael_hl7z"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="AEL-HL7Z" />
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/copyRoomIdCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/color_white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/color_lavender"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:id="@+id/copyRoomIdContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="14dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="14dp"
+                            android:paddingBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/copyRoomIdImageView"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_copy"
+                                app:tint="@color/color_navy_blue" />
+
+                            <TextView
+                                android:id="@+id/copyRoomIdTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="@string/multiplayer_friend_copy"
+                                android:textColor="@color/color_navy_blue"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/shareRoomInfoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/multiplayer_friend_share_this_room_id_with_your_friends_to_join_the_match"
+                android:textAlignment="center"
+                android:textColor="@color/color_text_hint"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/teamsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <!-- TEAM A -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/teamAFriendsCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_orange_primary"
+                    app:strokeWidth="1.5dp">
+
+                    <LinearLayout
+                        android:id="@+id/teamAFriendsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/teamAFriendsHeaderRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/teamAFriendsTitleTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxLines="1"
+                                android:text="@string/multiplayer_friend_team_a"
+                                android:textColor="@color/color_orange_primary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/teamAStatusCardView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                app:cardBackgroundColor="@color/color_white"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/color_orange_primary"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:id="@+id/teamAStatusTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="8dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="@string/multiplayer_friend_joined"
+                                    android:textColor="@color/color_orange_primary"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:id="@+id/teamAFriendsCountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/multiplayer_friend__1_4"
+                                android:textColor="@color/color_text_hint"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/teamAFriendsPlayerCountTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/multiplayer_friend_player_count_1_4"
+                            android:textColor="@color/color_orange_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/teamAAvatarSlotsContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamAAvatarSlot1"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/avatar_1"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_orange_primary"
+                                app:strokeWidth="2dp" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamAAvatarSlot2"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamAAvatarSlot3"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamAAvatarSlot4"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/teamAPlayersSummaryTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/multiplayer_friend_joseph_emma"
+                            android:textColor="@color/color_navy_blue"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="Joseph, Emma" />
+
+                        <TextView
+                            android:id="@+id/teamAJoinHintTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/multiplayer_friend_tap_to_join"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/teamAYouBadgeCardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/color_orange_primary"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/teamAYouBadgeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/multiplayer_friend_you_joined"
+                                android:textColor="@color/color_white"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- VS -->
+
+                <TextView
+                    android:id="@+id/friendsVsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
+                    android:text="@string/multiplayer_friend_vs"
+                    android:textColor="@color/color_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- TEAM B -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/teamBFriendsCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/color_purple"
+                    app:strokeWidth="1.5dp">
+
+                    <LinearLayout
+                        android:id="@+id/teamBFriendsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/teamBFriendsHeaderRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/teamBFriendsTitleTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxLines="1"
+                                android:text="@string/multiplayer_friend_team_b"
+                                android:textColor="@color/color_purple"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/teamBStatusCardView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                app:cardBackgroundColor="@color/color_white"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/color_purple"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:id="@+id/teamBStatusTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="8dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="@string/multiplayer_friend_open"
+                                    android:textColor="@color/color_purple"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:id="@+id/teamBFriendsCountTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/multiplayer_friend__0_4"
+                                android:textColor="@color/color_text_hint"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/teamBFriendsPlayerCountTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/multiplayer_friend_player_count_0_4"
+                            android:textColor="@color/color_purple"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/teamBAvatarSlotsContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamBAvatarSlot1"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamBAvatarSlot2"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamBAvatarSlot3"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="8dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/teamBAvatarSlot4"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:alpha="0.60"
+                                android:background="@drawable/bg_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_add"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp"
+                                app:tint="@color/color_text_hint" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/teamBPlayersSummaryTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/multiplayer_friend_waiting_for_players"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="Waiting for players..." />
+
+                        <TextView
+                            android:id="@+id/teamBJoinHintTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/multiplayer_friend_tap_to_join"
+                            android:textColor="@color/color_text_hint"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/teamBYouBadgeCardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/color_purple"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/teamBYouBadgeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/multiplayer_friend_you_joined"
+                                android:textColor="@color/color_white"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/friendsStartInfoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/multiplayer_friend_start_the_match_when_both_teams_are_ready"
+                android:textAlignment="center"
+                android:textColor="@color/color_navy_blue"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/roomChatCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/color_lavender"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/roomChatTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/multiplayer_friend_room_chat"
+                        android:textColor="@color/color_navy_blue"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/roomChatRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_room_message" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/quickMessagesScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/quickMessagesContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/joinTeamAQuickButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="@string/multiplayer_friend_join_team_a"
+                                android:textAllCaps="false"
+                                android:textColor="@color/color_navy_blue"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/color_white"
+                                app:cornerRadius="20dp"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/joinTeamBQuickButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="@string/multiplayer_friend_join_team_b"
+                                android:textAllCaps="false"
+                                android:textColor="@color/color_navy_blue"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/color_white"
+                                app:cornerRadius="20dp"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/readyQuickButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="@string/multiplayer_friend_ready"
+                                android:textAllCaps="false"
+                                android:textColor="@color/color_navy_blue"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/color_white"
+                                app:cornerRadius="20dp"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/waitQuickButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="@string/multiplayer_friend_wait"
+                                android:textAllCaps="false"
+                                android:textColor="@color/color_navy_blue"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/color_white"
+                                app:cornerRadius="20dp"
+                                app:strokeColor="@color/color_lavender"
+                                app:strokeWidth="1dp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/roomMessageInputRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/roomMessageEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_white"
+                            android:hint="@string/multiplayer_friend_write_message"
+                            android:minHeight="44dp"
+                            android:paddingStart="12dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/color_navy_blue"
+                            android:textColorHint="@color/color_text_hint"
+                            android:textSize="14sp"
+                            android:inputType="textCapSentences"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:ellipsize="end"/>
+
+                        <ImageView
+                            android:id="@+id/sendMessageImageView"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_orange"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_send"
+                            app:tint="@color/color_white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startFriendsMatchButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/color_orange_primary"
+                android:text="@string/multiplayer_friend_start_match"
+                android:textAllCaps="false"
+                android:textColor="@color/color_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="28dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

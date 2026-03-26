@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LeaderFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/weeklyButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.333"
+                    android:background="@drawable/bg_orange"
+                    android:text="@string/leaderboard_weekly"
+                    android:textColor="@color/color_navy_blue" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/monthlyButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.333"
+                    android:background="@drawable/bg_white"
+                    android:text="@string/leaderboard_monthly"
+                    android:textColor="@color/color_navy_blue" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/overallButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.333"
+                    android:background="@drawable/bg_white"
+                    android:text="@string/leaderboard_overall"
+                    android:textColor="@color/color_navy_blue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.333"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/thirdPlaceImageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="2dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.70"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#AE844F"
+                            app:strokeWidth="3dp" />
+
+                        <TextView
+                            android:id="@+id/thirdPlaceRankTextView"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/bg_top_circle_3"
+                            android:gravity="center"
+                            android:text="@string/leaderboard__3"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/thirdPlaceImageView"
+                            app:layout_constraintEnd_toEndOf="@id/thirdPlaceImageView"
+                            app:layout_constraintStart_toStartOf="@id/thirdPlaceImageView"
+                            app:layout_constraintTop_toBottomOf="@id/thirdPlaceImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/thirdPlaceNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leaderboard_title"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/bg_score_bronze"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/thirdPlaceScoreIconImageView"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_score" />
+
+                        <TextView
+                            android:id="@+id/thirdPlaceScoreTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/leaderboard__00000"
+                            android:textColor="@color/color_white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.333"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/firstPlaceImageView"
+                            android:layout_width="137dp"
+                            android:layout_height="137dp"
+                            android:padding="2dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#FEBB3A"
+                            app:strokeWidth="3dp" />
+
+                        <TextView
+                            android:id="@+id/firstPlaceRankTextView"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/bg_top_circle_1"
+                            android:gravity="center"
+                            android:text="@string/leaderboard__1"
+                            android:textColor="@color/color_white"
+                            android:textSize="23sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/firstPlaceImageView"
+                            app:layout_constraintEnd_toEndOf="@id/firstPlaceImageView"
+                            app:layout_constraintStart_toStartOf="@id/firstPlaceImageView"
+                            app:layout_constraintTop_toBottomOf="@id/firstPlaceImageView" />
+
+                        <ImageView
+                            android:id="@+id/crownImageView"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginBottom="-2dp"
+                            android:src="@drawable/ic_crown"
+                            app:layout_constraintBottom_toTopOf="@id/firstPlaceImageView"
+                            app:layout_constraintEnd_toEndOf="@id/firstPlaceImageView"
+                            app:layout_constraintStart_toStartOf="@id/firstPlaceImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/firstPlaceNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leaderboard_title"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/bg_score_gold"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/firstPlaceScoreIconImageView"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_score" />
+
+                        <TextView
+                            android:id="@+id/firstPlaceScoreTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/leaderboard__00000"
+                            android:textColor="@color/color_white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.333"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/secondPlaceImageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="2dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.65"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#BFBFC0"
+                            app:strokeWidth="3dp" />
+
+                        <TextView
+                            android:id="@+id/secondPlaceRankTextView"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/bg_top_circle_2"
+                            android:gravity="center"
+                            android:text="@string/leaderboard__2"
+                            android:textColor="@color/color_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/secondPlaceImageView"
+                            app:layout_constraintEnd_toEndOf="@id/secondPlaceImageView"
+                            app:layout_constraintStart_toStartOf="@id/secondPlaceImageView"
+                            app:layout_constraintTop_toBottomOf="@id/secondPlaceImageView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/secondPlaceNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leaderboard_title"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/bg_score_silver"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/secondPlaceScoreIconImageView"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_score" />
+
+                        <TextView
+                            android:id="@+id/secondPlaceScoreTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/leaderboard__00000"
+                            android:textColor="@color/color_white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/leaderboardRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
+                android:paddingBottom="80dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
