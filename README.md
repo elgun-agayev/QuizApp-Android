@@ -97,7 +97,7 @@ This separation ensures:
 1. Clone the repository:
 
 ```bash
-[git clone https://github.com/elgun-agayev/QuizApp.git](https://github.com/elgun-agayev/QuizApp-Android)
+git clone https://github.com/elgun-agayev/QuizApp-Android.git
 ```
 
 2. Open the project in **Android Studio**
